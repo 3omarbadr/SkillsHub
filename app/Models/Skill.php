@@ -9,6 +9,8 @@ class Skill extends Model
 {
     use HasFactory;
 
+    protected $gaurded = ['id', 'created_at', 'updated_at'];
+
     public function cats()
     {
         return $this->belongsTo(Cat::class);
