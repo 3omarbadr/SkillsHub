@@ -14,10 +14,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<h1 class="white-text">SkillsHub Free Online Skill Assessment</h1>
-					<p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant, eu pro
-						alii error homero.</p>
-					<a class="main-button icon-button" href="#">Get Started!</a>
+					<h1 class="white-text">{{__('web.heroTitle')}}</h1>
+					<p class="lead white-text">{{__('web.heroDesc')}}</p>
+					<a class="main-button icon-button" href="#">{{__('web.getStartedBtn')}}</a>
 				</div>
 			</div>
 		</div>
@@ -35,8 +34,8 @@
 		<!-- row -->
 		<div class="row">
 			<div class="section-header text-center">
-				<h2>Popular Exams</h2>
-				<p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+				<h2>{{__('web.popularExamsTitle')}}</h2>
+				<p class="lead">{{__('web.popularExamsDesc')}}</p>
 			</div>
 		</div>
 		<!-- /row -->
@@ -181,7 +180,7 @@
 
 		<div class="row">
 			<div class="center-btn">
-				<a class="main-button icon-button" href="#">More Courses</a>
+				<a class="main-button icon-button" href="#">{{__('web.moreCoursesBtn')}}</a>
 			</div>
 		</div>
 
@@ -207,9 +206,9 @@
 		<div class="row">
 
 			<div class="col-md-8 col-md-offset-2 text-center">
-				<h2 class="white-text">Contact Us</h2>
-				<p class="lead white-text">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
-				<a class="main-button icon-button" href="contact.html">Contact Us Now</a>
+				<h2 class="white-text">{{__('web.contact')}}</h2>
+				<p class="lead white-text">{{__('web.contactDesc')}}</p>
+				<a class="main-button icon-button" href="contact.html">{{__('web.contactBtn')}}</a>
 			</div>
 
 		</div>

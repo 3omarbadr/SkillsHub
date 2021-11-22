@@ -3,6 +3,7 @@
 use App\Http\Controllers\web\CatController;
 use App\Http\Controllers\web\ExamController;
 use App\Http\Controllers\web\HomeController;
+use App\Http\Controllers\web\LangController;
 use App\Http\Controllers\web\SkillController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware('lang')->group(function(){
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/categories/show/{id}', [CatController::class, 'show']);
-Route::get('/skills/show/{id}', [SkillController::class, 'show']);
-Route::get('/exams/show/{id}', [ExamController::class, 'show']);
-Route::get('/exams/questions/{id}', [ExamController::class, 'questions']);
+    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/categories/show/{id}', [CatController::class, 'show']);
+    Route::get('/skills/show/{id}', [SkillController::class, 'show']);
+    Route::get('/exams/show/{id}', [ExamController::class, 'show']);
+    Route::get('/exams/questions/{id}', [ExamController::class, 'questions']);
+});
+Route::get('/lang/set/{lang}', [LangController::class, 'set']);
