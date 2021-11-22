@@ -1,7 +1,7 @@
 @extends('web.layout')
 
 @section('title')
-    Show Category :
+    Categories - {{$cat->name()}}
 @endsection
 @section('main')
     		<!-- Hero-area -->
@@ -15,10 +15,10 @@
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<ul class="hero-area-tree">
-							<li><a href="index.html">Home</a></li>
-							<li>Category name</li>
+							<li><a href="index.html">{{__('web.home')}}</a></li>
+							<li>{{$cat->name()}}</li>
 						</ul>
-						<h1 class="white-text">Category name</h1>
+						<h1 class="white-text">{{$cat->name()}}</h1>
 
 					</div>
 				</div>
@@ -41,120 +41,28 @@
 
 						<!-- row -->
 						<div class="row">
-
+							@foreach ($skills as $skill )
+								
 							<!-- single skill -->
 							<div class="col-md-4">
 								<div class="single-blog">
 									<div class="blog-img">
 										<a href="skill.html">
-											<img src="{{asset('uploads/skills/skill1.jpg')}}" alt="">
+											<img src="{{asset("uploads/$skill->img")}}" alt="">
 										</a>
 									</div>
-									<h4><a href="skill.html">Pro eu error molestie deserunt. At per viderer bonorum persecuti.</a></h4>
+									<h4><a href="skill.html">{{$skill->name()}}</a></h4>
 									<div class="blog-meta">
-                                        <span>18 Oct, 2017</span>
+                                        <span>{{Carbon\Carbon::parse($skill->created_at)->format('d M, Y')}}</span>
 										<div class="pull-right">
-											<span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> 35</a></span>
+											<span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> {{$skill->getStudentsCount()}}</a></span>
 										</div>
 									</div>
 								</div>
 							</div>
 							<!-- /single skill -->
+							@endforeach
 
-							<!-- single skill -->
-							<div class="col-md-4">
-								<div class="single-blog">
-									<div class="blog-img">
-										<a href="skill.html">
-											<img src="{{asset('uploads/skills/skill2.jpg')}}" alt="">
-										</a>
-									</div>
-									<h4><a href="skill.html">Pro eu error molestie deserunt. At per viderer bonorum persecuti.</a></h4>
-									<div class="blog-meta">
-                                        <span>18 Oct, 2017</span>
-										<div class="pull-right">
-											<span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> 35</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /single skill -->
-
-							<!-- single skill -->
-							<div class="col-md-4">
-								<div class="single-blog">
-									<div class="blog-img">
-										<a href="skill.html">
-											<img src="{{asset('uploads/skills/skill3.jpg')}}" alt="">
-										</a>
-									</div>
-									<h4><a href="skill.html">Pro eu error molestie deserunt. At per viderer bonorum persecuti.</a></h4>
-									<div class="blog-meta">
-                                        <span>18 Oct, 2017</span>
-										<div class="pull-right">
-											<span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> 35</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /single skill -->
-
-							<!-- single skill -->
-							<div class="col-md-4">
-								<div class="single-blog">
-									<div class="blog-img">
-										<a href="skill.html">
-											<img src="{{asset('uploads/skills/skill4.jpg')}}" alt="">
-										</a>
-									</div>
-									<h4><a href="skill.html">Pro eu error molestie deserunt. At per viderer bonorum persecuti.</a></h4>
-									<div class="blog-meta">
-                                        <span>18 Oct, 2017</span>
-										<div class="pull-right">
-											<span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> 35</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-                            <!-- /single skill -->
-                            
-                            <!-- single skill -->
-							<div class="col-md-4">
-								<div class="single-blog">
-									<div class="blog-img">
-										<a href="skill.html">
-											<img src="{{asset('uploads/skills/skill5.jpg')}}" alt="">
-										</a>
-									</div>
-									<h4><a href="skill.html">Pro eu error molestie deserunt. At per viderer bonorum persecuti.</a></h4>
-									<div class="blog-meta">
-                                        <span>18 Oct, 2017</span>
-										<div class="pull-right">
-											<span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> 35</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-                            <!-- /single skill -->
-                            
-                            <!-- single skill -->
-							<div class="col-md-4">
-								<div class="single-blog">
-									<div class="blog-img">
-										<a href="skill.html">
-											<img src="{{asset('uploads/skills/skill6.jpg')}}" alt="">
-										</a>
-									</div>
-									<h4><a href="skill.html">Pro eu error molestie deserunt. At per viderer bonorum persecuti.</a></h4>
-									<div class="blog-meta">
-                                        <span>18 Oct, 2017</span>
-										<div class="pull-right">
-											<span class="blog-meta-comments"><a href="#"><i class="fa fa-users"></i> 35</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /single skill -->
 
 						</div>
 						<!-- /row -->
@@ -162,20 +70,7 @@
 						<!-- row -->
 						<div class="row">
 
-							<!-- pagination -->
-							<div class="col-md-12">
-								<div class="post-pagination">
-									<a href="#" class="pagination-back pull-left">Back</a>
-									<ul class="pages">
-										<li class="active">1</li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-									</ul>
-									<a href="#" class="pagination-next pull-right">Next</a>
-								</div>
-							</div>
-							<!-- pagination -->
+							{{$skills->links('web.inc.paginator')}}
 
 						</div>
 						<!-- /row -->
@@ -196,10 +91,13 @@
 
 						<!-- category widget -->
 						<div class="widget category-widget">
-							<h3>Categories</h3>
-							<a class="category" href="#">Programming <span>12</span></a>
-							<a class="category" href="#">Design <span>5</span></a>
-							<a class="category" href="#">Management <span>24</span></a>
+							<h3>{{__('web.cats')}}</h3>
+							@foreach ($allCats as $oneCat )
+								
+							<a class="category" href="{{ url("categories/show/{$oneCat->id}") }}">{{$oneCat->name()}}<span>{{$oneCat->skills()->count()}}</span></a>
+							
+							@endforeach
+							
 						</div>
 						<!-- /category widget -->
 					</div>

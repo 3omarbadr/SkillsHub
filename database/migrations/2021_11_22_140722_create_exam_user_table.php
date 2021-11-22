@@ -13,7 +13,7 @@ class CreateExamUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('exam_user_table_', function (Blueprint $table) {
+        Schema::create('exam_user', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->foreignId('exam_id')->constrained();
@@ -31,6 +31,6 @@ class CreateExamUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exam_user_table_');
+        Schema::dropIfExists('exam_user');
     }
 }
