@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\web\CatController;
 use App\Http\Controllers\web\ExamController;
 use App\Http\Controllers\web\HomeController;
@@ -24,5 +25,8 @@ Route::middleware('lang')->group(function(){
     Route::get('/skills/show/{id}', [SkillController::class, 'show']);
     Route::get('/exams/show/{id}', [ExamController::class, 'show']);
     Route::get('/exams/questions/{id}', [ExamController::class, 'questions']);
+    Route::get('/contact', [ContactController::class, 'index']);
+    Route::post('/contact/message/send', [ContactController::class, 'send']);
+
 });
 Route::get('/lang/set/{lang}', [LangController::class, 'set']);

@@ -91,8 +91,8 @@ Exams : {{$exam->name()}} Questions
         <!-- /blog post -->
 
         <div>
-          <button class="main-button icon-button pull-left">Submit</button>
-          <button class="main-button icon-button btn-danger pull-left ml-sm">Cancel</button>
+          <button class="main-button icon-button pull-left">{{__('web.sumitBtn')}}</button>
+          <button class="main-button icon-button btn-danger pull-left ml-sm">{{__('web.cancelBtn')}}</button>
         </div>
       </div>
       <!-- /main blog -->

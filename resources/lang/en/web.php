@@ -16,10 +16,25 @@ return [
     'moreCoursesBtn' => 'More Courses',
     'contactDesc' => 'Keep in touch with us',
     'contactBtn' => 'Contact Us Now',
-    'startExamBtn' => 'Start Exam',
+
+    'next' => 'Next',
+    'back' => 'Back',
+
+    'getInTouch' => 'Get In Touch',
+    'sendMsg' => 'Send A Message',
+    'msg' => 'Send Message',
+    'name' => 'Name',
+    'email' => 'Email',
+    'subject' => 'Subject',
+    'msg' => 'Enter Your Message',
+    'contactInfo' => 'Contact Information',
+
 
     'skill' => 'Skill',
     'questions' => 'Questions',
     'duration' => 'Duration',
     'difficulty' => 'Difficulty',
+    'startExamBtn' => 'Start Exam',
+    'cancelBtn' => 'Cancel',
+    'sumitBtn' => 'Submit',
 ];

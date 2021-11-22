@@ -16,4 +16,24 @@ return [
     'moreCoursesBtn' => 'المزيد من الدورات التدريبية',
     'contactDesc' => 'ابق علي اتصال معنا',
     'contactBtn' => 'تواصل معنا الآن',
+
+    'next' => 'التالي',
+    'back' => 'السابق',
+
+    'getInTouch' => 'كن علي تواصل معنا',
+    'sendMsg' => 'أرسل رسالة',
+    'msg' => 'إرسال',
+    'name' => 'الاسم',
+    'email' => 'البريد الالكتروني',
+    'subject' => 'الموضوع',
+    'contactInfo' => 'بيانات التواصل',
+
+
+    'skill' => 'المهارة',
+    'questions' => 'الأسئلة',
+    'duration' => 'المدة',
+    'difficulty' => 'المستوي',
+    'startExamBtn' => 'إبدأ الامتحان',
+    'cancelBtn' => 'الغاء',
+    'sumitBtn' => 'إرسال الإجابات',
 ];
