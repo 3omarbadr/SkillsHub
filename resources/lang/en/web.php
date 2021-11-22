@@ -16,4 +16,10 @@ return [
     'moreCoursesBtn' => 'More Courses',
     'contactDesc' => 'Keep in touch with us',
     'contactBtn' => 'Contact Us Now',
+    'startExamBtn' => 'Start Exam',
+
+    'skill' => 'Skill',
+    'questions' => 'Questions',
+    'duration' => 'Duration',
+    'difficulty' => 'Difficulty',
 ];

@@ -47,11 +47,11 @@
 							<div class="col-md-4">
 								<div class="single-blog">
 									<div class="blog-img">
-										<a href="skill.html">
+										<a href="{{url("skills/show/{$skill->id}")}}">
 											<img src="{{asset("uploads/$skill->img")}}" alt="">
 										</a>
 									</div>
-									<h4><a href="skill.html">{{$skill->name()}}</a></h4>
+									<h4><a href="{{url("skills/show/{$skill->id}")}}">{{$skill->name()}}</a></h4>
 									<div class="blog-meta">
                                         <span>{{Carbon\Carbon::parse($skill->created_at)->format('d M, Y')}}</span>
 										<div class="pull-right">

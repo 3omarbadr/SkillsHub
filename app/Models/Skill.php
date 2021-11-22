@@ -12,7 +12,7 @@ class Skill extends Model
 
     protected $gaurded = ['id', 'created_at', 'updated_at'];
 
-    public function cats()
+    public function cat()
     {
         return $this->belongsTo(Cat::class);
     }

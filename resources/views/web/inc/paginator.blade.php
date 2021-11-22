@@ -15,7 +15,6 @@
                             <li class="active">{{$page}}</li>
                         @else
                             <li><a href="{{$url}}">{{$page}}</a></li>
-
                         @endif
                     @endforeach
                 @endif
