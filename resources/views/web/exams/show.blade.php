@@ -17,7 +17,7 @@
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1 text-center">
 						<ul class="hero-area-tree">
-							<li><a href="index.html">{{__('web.home')}}</a></li>
+							<li><a href="{{url('/')}}">{{__('web.home')}}</a></li>
 							<li><a href="category.html">{{$exam->skill->cat->name()}}</a></li>
 							<li><a href="category.html">{{$exam->skill->name()}}</a></li>
 							<li>{{$exam->name()}}</li>
