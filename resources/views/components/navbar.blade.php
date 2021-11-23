@@ -22,12 +22,15 @@
         <li><a href="{{url("contact")}}">{{__('web.contact')}}</a></li>
 
         @guest
-            <li><a href="{{url("login")}}">{{__('web.signin')}}</a></li>
-            <li><a href="{{url("register")}}">{{__('web.signup')}}</a></li>
+        <li><a href="{{url("login")}}">{{__('web.signin')}}</a></li>
+        <li><a href="{{url("register")}}">{{__('web.signup')}}</a></li>
         @endguest
 
         @auth
-            <li><a id="logout-link" href="#">{{__('web.signout')}}</a></li>
+            @if (Auth::user()->role->name == 'student')
+            <li><a href="{{url('profile')}}">{{__('web.profile')}}</a></li>
+            @endif
+        <li><a id="logout-link" href="#">{{__('web.signout')}}</a></li>
         @endauth
 
         @if (App::getLocale() =='ar')

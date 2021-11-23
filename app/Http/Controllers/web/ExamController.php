@@ -44,7 +44,7 @@ class ExamController extends Controller
             return redirect(url("exams/show/$examId"));
         }
 
-        $data['exam'] = Exam::findOrFail($examId);
+        $data['exam'] = Exam::findOrFail($examId)->active();
 
         $request->session()->flash('prev', "questions/$examId");
 
@@ -53,7 +53,7 @@ class ExamController extends Controller
 
     public function submit($examId, Request $request)
     {
-
+        $exam = Exam::findOrFail($examId);
         if (session('prev') !== "questions/$examId") {
             return redirect(url("exams/show/$examId"));
         }
@@ -65,8 +65,6 @@ class ExamController extends Controller
         ]);
 
         // Calculate Score
-        $exam = Exam::findOrFail($examId);
-
         $points = 0;
         $totalQuesNum = $exam->questions->count();
 

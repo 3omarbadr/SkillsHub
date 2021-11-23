@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\web\ContactController;
 use App\Http\Controllers\web\CatController;
 use App\Http\Controllers\web\ExamController;
 use App\Http\Controllers\web\HomeController;
 use App\Http\Controllers\web\LangController;
+use App\Http\Controllers\web\ProfileController;
 use App\Http\Controllers\web\SkillController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,7 @@ Route::middleware('lang')->group(function(){
     Route::get('/exams/show/{id}', [ExamController::class, 'show']);
     Route::get('/exams/questions/{id}', [ExamController::class, 'questions'])->middleware(['auth', 'verified' , 'student']);
     Route::get('/contact', [ContactController::class, 'index']);
-    
+    Route::get('/profile', [ProfileController::class, 'index'])->middleware(['auth', 'verified' , 'student', 'can-enter-exam']);
 });
 
 Route::post('/exams/start/{id}', [ExamController::class, 'start'])->middleware(['auth', 'verified' , 'student', 'can-enter-exam']);

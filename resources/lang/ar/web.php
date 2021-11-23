@@ -13,6 +13,9 @@ return [
     'forgotPassword' => 'Forgot Password',
 
 
+    'profile' => 'الملف الشخصي',
+
+
     'heroTitle' => 'موقع اختبار المهارات',
     'heroDesc' => 'سجل معنا و اختبر مهاراتك الآن',
     'popularExamsTitle' => 'الاختبارات الأكثر شيوعا',
