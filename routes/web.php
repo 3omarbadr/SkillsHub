@@ -29,7 +29,7 @@ Route::middleware('lang')->group(function(){
     
 });
 
-Route::post('/exams/start/{id}', [ExamController::class, 'start'])->middleware(['auth', 'verified' , 'student']);
+Route::post('/exams/start/{id}', [ExamController::class, 'start'])->middleware(['auth', 'verified' , 'student', 'can-enter-exam']);
 Route::post('/exams/submit/{id}', [ExamController::class, 'submit'])->middleware(['auth', 'verified' , 'student']);
 
 Route::post('/contact/message/send', [ContactController::class, 'send']);
