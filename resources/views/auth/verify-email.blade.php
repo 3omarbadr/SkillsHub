@@ -17,7 +17,7 @@ Verify Email
         <!-- row -->
         <div class="row">
 
-            <!-- login form -->
+            <!-- verify email form -->
             <div class="col-md-6 col-md-offset-3">
                 <div class="contact-form">
                     <form action="{{url('/email/verification-notification')}}" method="post">

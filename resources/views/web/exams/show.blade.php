@@ -55,7 +55,10 @@
 						<!-- /blog post -->
                         
                         <div>
-							<a href="{{url("/exams/questions/{$exam->id}")}}" class="main-button icon-button pull-left">{{__('web.startExamBtn')}}</a>
+							<form method="POST" action="{{url("/exams/start/{$exam->id}")}}">
+								@csrf
+								<button type="submit" class="main-button icon-button pull-left">{{__('web.startExamBtn')}}</button>
+							</form>
                         </div>
 					</div>
 					<!-- /main blog -->
