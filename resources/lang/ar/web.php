@@ -6,6 +6,12 @@ return [
     'contact' => 'اتصل بنا',
     'signin' => 'تسجيل دخول',
     'signup' => 'تسجيل حساب',
+    'signout' => 'تسجيل خروج',
+    'rememberme' => 'تذكرني',
+    'signinExam' => 'سجل لتبدأ الإختبار',
+
+    'forgotPassword' => 'Forgot Password',
+
 
     'heroTitle' => 'موقع اختبار المهارات',
     'heroDesc' => 'سجل معنا و اختبر مهاراتك الآن',

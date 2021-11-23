@@ -40,7 +40,7 @@
             <div class="navbar-header">
                 <!-- Logo -->
                 <div class="navbar-brand">
-                    <a class="logo" href="index.html">
+                    <a class="logo" href="{{url('/')}}">
                         <img src="{{asset('web/img/logo.png')}}" alt="logo">
                     </a>
                 </div>
@@ -107,7 +107,12 @@
     <script type="text/javascript" src="{{asset('web/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('web/js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('web/js/main.js')}}"></script>
-
+    <script>
+        $('#logout-link').click(function(e) {
+            e.preventDefault ()
+            $('#logout-form').submit()
+        })
+    </script>
     @yield('scripts')
 </body>
 

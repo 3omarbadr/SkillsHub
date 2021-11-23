@@ -1,7 +1,10 @@
+<nav id="nav">
+    <form id="logout-form" action="{{url('logout')}}" method="POST" style="display: none">
+        @csrf
+    </form>
 
-  <nav id="nav">
     <ul class="main-menu nav navbar-nav navbar-right">
-        <li><a href="index.html">{{__('web.home')}}</a></li>
+        <li><a href="{{url('/')}}">{{__('web.home')}}</a></li>
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                 aria-expanded="false">{{__('web.cats')}} <span class="caret"></span></a>
@@ -10,17 +13,23 @@
 
 
                 <li><a href="{{url("categories/show/{$cat->id}")}}">
-                       {{$cat->name()}}
+                        {{$cat->name()}}
                     </a>
                 </li>
-
-
                 @endforeach
             </ul>
         </li>
-        <li><a href="contact.html">{{__('web.contact')}}</a></li>
-        <li><a href="login.html">{{__('web.signin')}}</a></li>
-        <li><a href="register.html">{{__('web.signup')}}</a></li>
+        <li><a href="{{url("contact")}}">{{__('web.contact')}}</a></li>
+
+        @guest
+            <li><a href="{{url("login")}}">{{__('web.signin')}}</a></li>
+            <li><a href="{{url("register")}}">{{__('web.signup')}}</a></li>
+        @endguest
+
+        @auth
+            <li><a id="logout-link" href="#">{{__('web.signout')}}</a></li>
+        @endauth
+
         @if (App::getLocale() =='ar')
         <li><a href="{{url('lang/set/en')}}">English</a></li>
         @else
