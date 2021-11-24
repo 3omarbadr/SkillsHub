@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\web\ContactController;
-use App\Http\Controllers\web\CatController;
-use App\Http\Controllers\web\ExamController;
-use App\Http\Controllers\web\HomeController;
-use App\Http\Controllers\web\LangController;
-use App\Http\Controllers\web\ProfileController;
-use App\Http\Controllers\web\SkillController;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Web\ContactController;
+use App\Http\Controllers\Web\CatController;
+use App\Http\Controllers\Web\ExamController;
+use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\LangController;
+use App\Http\Controllers\Web\ProfileController;
+use App\Http\Controllers\Web\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,19 @@ Route::post('/exams/submit/{id}', [ExamController::class, 'submit'])->middleware
 
 Route::post('/contact/message/send', [ContactController::class, 'send']);
 Route::get('/lang/set/{lang}', [LangController::class, 'set']);
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+
+Route::prefix('dashboard')->middleware(['auth', 'verified', 'can-enter-dashboard'])->group(function()
+{
+    Route::get('/', [AdminHomeController::class, 'index']);
+});
+
+
+
+

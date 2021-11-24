@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\Role;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,8 +17,7 @@ class IsSuperAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        $superAdminRole = Role::where('name', 'superadmin')->first();
-        if(Auth::superadmin()->role_id !== $superAdminRole->id){
+        if(Auth::superadmin()->role->name == 'superadmin'){
             return redirect(url('/'));
         }
         return $next($request);

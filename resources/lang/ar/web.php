@@ -10,11 +10,8 @@ return [
     'rememberme' => 'تذكرني',
     'signinExam' => 'سجل لتبدأ الإختبار',
 
-    'forgotPassword' => 'Forgot Password',
-
-
-    'profile' => 'الملف الشخصي',
-
+    'forgotPassword' => 'هل نسيت كلمة السر',
+    'resetPassword' => 'Reset Password',
 
     'heroTitle' => 'موقع اختبار المهارات',
     'heroDesc' => 'سجل معنا و اختبر مهاراتك الآن',
@@ -45,4 +42,7 @@ return [
     'startExamBtn' => 'إبدأ الامتحان',
     'cancelBtn' => 'الغاء',
     'sumitBtn' => 'إرسال الإجابات',
+
+    'profile' => 'الحساب',
+    'dashboard' => 'لوحة التحكم',
 ];

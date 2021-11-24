@@ -13,8 +13,6 @@ return [
     'forgotPassword' => 'Forgot Password',
     'resetPassword' => 'Reset Password',
 
-    'profile' => 'Profile',
-
     'heroTitle' => 'SkillsHub Free Online Skill Assesment',
     'heroDesc' => 'Join us and test your skills now',
     'popularExamsTitle' => 'Popular Exams',
@@ -45,4 +43,7 @@ return [
     'startExamBtn' => 'Start Exam',
     'cancelBtn' => 'Cancel',
     'sumitBtn' => 'Submit',
+
+    'profile' => 'Profile',
+    'dashboard' => 'Dashboard',
 ];
