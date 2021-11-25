@@ -9,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>ٍSkillsHub|Dashboard</title>
+  <title>SkillsHub|Dashboard</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset("admin/css/fontawesome.all.css")}}">
@@ -86,10 +86,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+            <a href="{{url('dashboard/categories')}}" class="nav-link">
+              <i class="nav-icon fas fa-list"></i>
               <p>
-                Page three
+                Categories
               </p>
             </a>
           </li>
@@ -119,7 +119,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="https://www.linkedin.com/in/3omarbadr/" target="_blank">Omar Badr</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
