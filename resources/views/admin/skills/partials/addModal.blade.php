@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Add New Category</h4>
+                <h4 class="modal-title">Add New Skill</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -11,7 +11,7 @@
                 <!-- form start -->
                 @include('admin.inc.errors')
 
-                <form method="POST" action="{{url("dashboard/categories/store")}}" id="add-form">
+                <form method="POST" action="{{url("dashboard/skills/store")}}" id="add-form" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-6">
@@ -26,6 +26,27 @@
                                 <input type="text" name="name_ar" class="form-control">
                             </div>
                         </div>
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Category</label>
+                                <select class="custom-select form-control" name="cat_id">
+                                    @foreach ($cats as $cat)
+                                        <option value="{{$cat->id}}">{{$cat->name()}}</option>    
+                                    @endforeach
+                                </select>
+                              </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Image</label>
+                            <div class="input-group">
+                              <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="img">
+                                <label class="custom-file-label">Choose file</label>
+                              </div>
+                            </div>
+                          </div>
                     </div>
                 </form>
             </div>
