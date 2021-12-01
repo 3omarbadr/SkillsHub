@@ -35,9 +35,11 @@ return [
             'root' => storage_path('app'),
         ],
 
-        'uploads' => [
+        'skills' => [
             'driver' => 'local',
-            'root' => public_path('uploads'),
+            'root' => storage_path('app/public/uploads/skills'),
+            'url' => env('APP_URL').'/storage/uploads/skills',
+            'visibility' => 'public',
         ],
 
         'public' => [
@@ -73,6 +75,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/uploads/skills') => storage_path('app/public/uploads/skills'),
+
     ],
 
 ];

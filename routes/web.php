@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CatController as AdminCatController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\SkillController as AdminSkillController;
+use App\Http\Controllers\Admin\ExamController as AdminExamController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\CatController;
 use App\Http\Controllers\Web\ExamController;
@@ -61,6 +62,12 @@ Route::prefix('dashboard')->middleware(['auth', 'verified', 'can-enter-dashboard
     Route::post('/skills/update', [AdminSkillController::class, 'update']);
     Route::get('/skills/delete/{skill}', [AdminSkillController::class, 'delete']);
     Route::get('/skills/toggle/{skill}', [AdminSkillController::class, 'toggle']);
+
+    Route::get('/exams', [AdminExamController::class, 'index']);
+    Route::post('/exams/store', [AdminExamController::class, 'store']);
+    Route::post('/exams/update', [AdminExamController::class, 'update']);
+    Route::get('/exams/delete/{exam}', [AdminExamController::class, 'delete']);
+    Route::get('/exams/toggle/{exam}', [AdminExamController::class, 'toggle']);
 });
 
 

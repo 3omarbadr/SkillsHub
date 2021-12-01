@@ -55,7 +55,7 @@
                             <td>{{$skill->name('ar')}}</td>
                             <td>{{$skill->cat->name('en')}}</td>
                             <td>
-                                <img src="{{asset("uploads/$skill->img")}}" height="50px">
+                                <img src="{{asset('storage/uploads/skills/'.$skill->img)}}" height="50px">
                             </td>
                             <td>
                                 @if($skill->active)
