@@ -154,7 +154,7 @@ class ExamController extends Controller
             'name_ar' => 'required|string|max:100',
             'desc_en' => 'required|string|max:5000',
             'desc_ar' => 'required|string|max:5000',
-            'img' => 'required|image|max:2048',
+            'img' => 'nullable|image|max:2048',
             'skill_id' => 'required|exists:skills,id',
             'difficulty' => 'required|integer|min:1|max:5',
             'duration_mins' => 'required|integer|min:1',
