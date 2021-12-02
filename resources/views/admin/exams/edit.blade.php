@@ -77,7 +77,7 @@
                                         <label>Image</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" name="img" value="{{$exam->img}}" class="custom-file-input">
+                                                <input type="file" name="img" class="custom-file-input">
                                                 <label class="custom-file-label">Choose file</label>
                                             </div>
                                         </div>
