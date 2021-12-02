@@ -17,6 +17,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset("admin/css/adminlte.css")}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+<!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   
   @yield('styles')
 
@@ -102,6 +104,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{url('dashboard/exams')}}" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Exams
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -141,6 +152,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset("admin/js/bootstrap.bundle.js")}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset("admin/js/adminlte.js")}}"></script>
+
+<!-- Select2 -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 @yield('scripts')
 

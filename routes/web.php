@@ -64,8 +64,16 @@ Route::prefix('dashboard')->middleware(['auth', 'verified', 'can-enter-dashboard
     Route::get('/skills/toggle/{skill}', [AdminSkillController::class, 'toggle']);
 
     Route::get('/exams', [AdminExamController::class, 'index']);
+    Route::get('/exams/show/{exam}', [AdminExamController::class, 'show']);
+    Route::get('/exams/show-questions/{exam}/', [AdminExamController::class, 'showQuestions']);
+    Route::get('/exams/create-questions/{exam}', [AdminExamController::class, 'createQuestions']);
+    Route::post('/exams/store-questions/{exam}', [AdminExamController::class, 'storeQuestions']);
+    Route::get('/exams/create', [AdminExamController::class, 'create']);
     Route::post('/exams/store', [AdminExamController::class, 'store']);
-    Route::post('/exams/update', [AdminExamController::class, 'update']);
+    Route::get('/exams/edit/{exam}', [AdminExamController::class, 'edit']);
+    Route::post('/exams/update/{exam}', [AdminExamController::class, 'update']);
+    Route::get('/exams/edit-questions/{exam}/{question}', [AdminExamController::class, 'editQuestion']);
+    Route::post('/exams/update-questions/{exam}', [AdminExamController::class, 'updateQuestion']);
     Route::get('/exams/delete/{exam}', [AdminExamController::class, 'delete']);
     Route::get('/exams/toggle/{exam}', [AdminExamController::class, 'toggle']);
 });

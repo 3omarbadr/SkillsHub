@@ -42,6 +42,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'exams' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/uploads/exams'),
+            'url' => env('APP_URL').'/storage/uploads/exams',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -76,6 +83,7 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
         public_path('storage/uploads/skills') => storage_path('app/public/uploads/skills'),
+        public_path('storage/uploads/exams') => storage_path('app/public/uploads/exams'),
 
     ],
 

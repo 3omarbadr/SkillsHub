@@ -22,8 +22,8 @@ class ExamFactory extends Factory
             ]),
 
             'description' => json_encode([
-                'en' => $this->faker->text(5000),
-                'ar' => $this->faker->text(5000),
+                'en' => $this->faker->text(500),
+                'ar' => $this->faker->text(500),
             ]),
             'img' => "/$i.png",
             'questions_no' => 15,
