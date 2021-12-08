@@ -77,9 +77,7 @@
                         </div>
                         <!-- /.card-body -->
                     </div>
-
-                    <a href="{{url()->previous()}}" class="btn btn-sm btn-primary">Back</a>
-                    <a href="{{url("dashboard/exams")}}" class="btn btn-sm btn-primary">Back To all exams</a>
+                    <a href="{{url("dashboard/students")}}" class="btn btn-sm btn-primary">Back To all students</a>
                 </div>
             </div>
             <!-- /.row -->

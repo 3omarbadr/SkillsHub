@@ -30,10 +30,6 @@
                         @include('admin.inc.messages')
                         <div class="card-header">
                             <h3 class="card-title">{{__('web.allstudents')}}</h3>
-    
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-small btn-primary" data-toggle="modal" data-target="#add-modal">Add New</button>
-                            </div>
                         </div>
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
