@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CatController as AdminCatController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\SkillController as AdminSkillController;
 use App\Http\Controllers\Admin\ExamController as AdminExamController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\CatController;
 use App\Http\Controllers\Web\ExamController;
@@ -76,6 +77,11 @@ Route::prefix('dashboard')->middleware(['auth', 'verified', 'can-enter-dashboard
     Route::post('/exams/update-questions/{exam}', [AdminExamController::class, 'updateQuestion']);
     Route::get('/exams/delete/{exam}', [AdminExamController::class, 'delete']);
     Route::get('/exams/toggle/{exam}', [AdminExamController::class, 'toggle']);
+
+    Route::get('/students', [StudentController::class, 'index']);
+    Route::get('/students/show-scores/{id}', [StudentController::class, 'showScores']);
+    Route::get('/students/open-exam/{studentId}/{examId}', [StudentController::class, 'openExam']);
+    Route::get('/students/close-exam/{studentId}/{examId}', [StudentController::class, 'closeExam']);
 });
 
 

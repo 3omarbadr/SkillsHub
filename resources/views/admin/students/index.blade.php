@@ -8,12 +8,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">{{__('web.cats')}}</h1>
+                    <h1 class="m-0 text-dark">{{__('web.students')}}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url('dashboard')}}">{{__('web.home')}}</a></li>
-                        <li class="breadcrumb-item active">{{__('web.cats')}}</li>
+                        <li class="breadcrumb-item active">{{__('web.students')}}</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,7 +29,7 @@
                     <div class="card">
                         @include('admin.inc.messages')
                         <div class="card-header">
-                            <h3 class="card-title">{{__('web.allcats')}}</h3>
+                            <h3 class="card-title">{{__('web.allstudents')}}</h3>
     
                             <div class="card-tools">
                                 <button type="button" class="btn btn-small btn-primary" data-toggle="modal" data-target="#add-modal">Add New</button>
@@ -40,32 +40,30 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name (en)</th>
-                                        <th>Name (ar)</th>
-                                        <th>Active</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Verified</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                @foreach ($cats as $cat)
-                                <tbody id="cats-table">
+                                @foreach ($students as $student)
+                                <tbody id="students-table">
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$cat->name('en')}}</td>
-                                        <td>{{$cat->name('ar')}}</td>
+                                        <td>{{$student->name}}</td>
+                                        <td>{{$student->email}}</td>
                                         <td>
-                                            @if($cat->active)
-        
+                                            @if($student->email_verified_at !== null)
+            
                                             <span class="badge bg-success">yes</span>
                                             @else
-        
+            
                                             <span class="badge bg-danger">no</span>
-        
+            
                                             @endif
                                         </td>
                                         <td>
-                                            <button type="button" class="btn btn-sm btn-info edit-btn" data-id="{{$cat->id}}" data-name-en="{{$cat->name('en')}}" data-name-ar="{{$cat->name('ar')}}" data-toggle="modal" data-target="#edit-modal"><i class="fas fa-edit"></i></button>
-                                            <a href="{{url("dashboard/categories/delete/$cat->id")}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-                                            <a href="{{url("dashboard/categories/toggle/$cat->id")}}" class="btn btn-sm btn-secondary"><i class="fas fa-toggle-on"></i></a>
+                                            <a href="{{url("/dashboard/students/show-scores/$student->id")}}" class="btn btn-sm btn-success"><i class="fas fa-percent"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -77,7 +75,7 @@
             </div>
             <div class="d-flex justify-content-center my-3">
 
-                {{$cats->links()}}
+                {{$students->links()}}
 
             </div>
         </div>
@@ -87,9 +85,5 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-
-@include('admin.cats.partials.addModal')
-
-@include('admin.cats.partials.editModal')
 
 @endsection

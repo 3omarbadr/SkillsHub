@@ -31,6 +31,14 @@ class ExamController extends Controller
     {
         $user = Auth::user();
 
+        if(! $user->exams->contains($examId)) {
+            $user->exams()->attach($examId);
+        } else {
+            $user->exams()->updateExistingPivot($examId, [
+                'status' => 'closed',
+            ]);
+        }
+
         $request->session()->flash('prev', "start/$examId");
 
         $user->exams()->attach($examId);
