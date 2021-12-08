@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CatController as AdminCatController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\SkillController as AdminSkillController;
@@ -78,10 +79,21 @@ Route::prefix('dashboard')->middleware(['auth', 'verified', 'can-enter-dashboard
     Route::get('/exams/delete/{exam}', [AdminExamController::class, 'delete']);
     Route::get('/exams/toggle/{exam}', [AdminExamController::class, 'toggle']);
 
+   
     Route::get('/students', [StudentController::class, 'index']);
     Route::get('/students/show-scores/{id}', [StudentController::class, 'showScores']);
     Route::get('/students/open-exam/{studentId}/{examId}', [StudentController::class, 'openExam']);
     Route::get('/students/close-exam/{studentId}/{examId}', [StudentController::class, 'closeExam']);
+
+
+    Route::middleware('superadmin')->group(function() {
+    
+        Route::get('/admins', [AdminController::class, 'index']);
+        Route::get('/admins/create', [AdminController::class, 'create']);
+        Route::post('/admins/store', [AdminController::class, 'store']);
+        Route::get('/admins/promote/{id}', [AdminController::class, 'promote']);
+        Route::get('/admins/demote/{id}', [AdminController::class, 'demote']);
+    });
 });
 
 
