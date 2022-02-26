@@ -36,7 +36,7 @@ return [
     'contactInfo' => 'Contact Information',
 
 
-    'skill' => 'Skill',
+    'skills' => 'Skills',
     'questions' => 'Questions',
     'duration' => 'Duration',
     'difficulty' => 'Difficulty',
