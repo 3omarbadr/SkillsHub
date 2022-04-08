@@ -29,7 +29,7 @@
                     <div class="card">
                         @include('admin.inc.messages')
                         <div class="card-header">
-                            <h3 class="card-title">{{__('web.skills')}}</h3>
+                            <h3 class="card-title">{{__('web.skills')}} </h3>
     
                             <div class="card-tools">
                                 <button type="button" class="btn btn-small btn-primary" data-toggle="modal" data-target="#add-modal">Add New</button>
